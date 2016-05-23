@@ -21,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import net.jcip.annotations.NotThreadSafe;
 import dk.dma.ais.binary.SixbitException;
@@ -54,6 +55,8 @@ public class AisPacket implements Comparable<AisPacket> {
     AisPacket(Vdm vdm, String stringMessage) {
         this(stringMessage);
         this.vdm = vdm;
+//        this.timestamp=Optional.of(vdm.getTimestamp().getTime()).orElse(System.currentTimeMillis()); //WKM
+
     }
 
     public static AisPacket fromByteBuffer(ByteBuffer buffer) {

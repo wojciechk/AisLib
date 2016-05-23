@@ -261,7 +261,8 @@ public class TargetTracker implements Tracker {
      */
     public void update(AisPacket packet) {
         AisMessage message = packet.tryGetAisMessage();
-        Date date = packet.getTimestamp();
+//        Date date = packet.getTimestamp();
+        Date date = new Date();
 
         // We only want to handle messages containing targets data
         // #1-#3, #4, #5, #18, #21, #24 and a valid timestamp
